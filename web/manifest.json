@@ -1,6 +1,6 @@
 {
-    "name": "task2",
-    "short_name": "task2",
+    "name": "task2_proj",
+    "short_name": "task2_proj",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

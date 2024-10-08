@@ -1,34 +1,35 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:task2/screens/home_screen.dart';
+import 'package:task2_proj/screens/sign_in.dart';
 
-class SplashScreen extends StatelessWidget{
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  void initState(BuildContext context){
-    Timer(const Duration(seconds: 3), (){
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context)=> const HomeScreen())
-      );
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const SignIn()));
     });
   }
 
   @override
-  Widget build(BuildContext context){
-    final width= MediaQuery.of(context).size.width;
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Container(
             height: height,
             width: width,
-            color: const Color.fromRGBO(83, 177, 117,1),
-            child: Center(
-                child: Image.asset('assets/splash_logo.png')
-            )
-        )
-    );
+            alignment: Alignment.center,
+            color: const Color.fromRGBO(83, 177, 117, 1),
+            child: Image.asset('assets/images/splash_logo.png')));
   }
 }
-
