@@ -36,14 +36,20 @@ class _StateSignIn extends State<SignIn> {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark));
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        body: Container(
+        resizeToAvoidBottomInset: false,
+        body: GestureDetector(
+          onTap: (){
+            FocusScope.of(context).unfocus();
+          },
+            child: Container(
             color: Colors.white,
             child: Flex(direction: Axis.vertical, children: [
               Container(
                 color: Colors.white70,
-                child: Image.asset("assets/images/signin_img.png"),
+                child: Image.asset("assets/images/signin_img.png", width: width),
               ),
               Expanded(
                   flex: 3,
@@ -84,9 +90,9 @@ class _StateSignIn extends State<SignIn> {
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(130, 130, 130, 1))))),
                       Expanded(
-                        flex: 2,
+                        flex: 5,
                           child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                         FuncButton(
                             title: 'Continue with Google',
@@ -102,7 +108,7 @@ class _StateSignIn extends State<SignIn> {
                       ])),
                     ],
                   ))
-            ])));
+            ]))));
   }
 
   googleSignin() {
