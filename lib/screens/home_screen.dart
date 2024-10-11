@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task2_proj/widgets/category_tile.dart';
 import 'package:task2_proj/widgets/itemList.dart';
 import 'package:task2_proj/widgets/search_input.dart';
 import 'package:task2_proj/widgets/section_heading.dart';
